@@ -1,0 +1,41 @@
+<template name="twitter">
+	<div class="pages white paralax page-twitter" id="page-twitter" style="background-image: url('{{ dict 'twitterBackground.url' }}'); background-color: #000">
+	    <div class="overlay"></div>
+
+	    <div class="container">
+	        <div class="row-fluid">
+	            <div class="span8 offset2">
+	                <div class="logos-container">
+	                	{{# each logos }}
+		                    <a href="{{ url }}" target="_BLANK">
+		                        <img src="{{ image.url }}">
+		                    </a>
+	                    {{/ each }}
+	                </div>
+	            </div>
+	        </div>
+	         <div class="row-fluid footer">
+	            <div class="span8 offset2 twitter-container">
+	                <div class="twitter-devider"></div>
+	                <div id="twitterCarousel" class="carousel slide">
+						<ol class="carousel-indicators">
+							{{# each tweets }}
+								<li data-target="#twitterCarousel" data-slide-to="{{ index }}" class="{{# if isCero index }}active{{/ if }}"></li>
+							{{/ each }}
+						</ol>
+						<!-- Carousel items -->
+						<div class="carousel-inner">
+							{{# each tweets }}
+								<div class="item {{# if isCero index }}active{{/ if }}">
+									<div class="tweet">
+			                            <p>{{{ content }}}</p>
+			                        </div>
+								</div>
+							{{/ each }}
+						</div>
+					</div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</template>

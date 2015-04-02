@@ -1,0 +1,84 @@
+p.text a {
+    color:white;
+}
+.portfolio-items .portfolio-overlay {
+    background-color: rgba(0,0,0,0.8);
+}
+.portfolio-items .box {
+    position: relative;
+    width: 100%;
+}
+.portfolio-items .box:before {
+    content: "";
+    display: block;
+    padding-top: 78.5%;
+}
+.portfolio-items .item-container {
+    background-color: #EFEFEF;
+    border: solid 1px #C9C9C9;
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.carousel-inner .item .box {
+    position: relative;
+    width: 100%;
+}
+.carousel-inner .item .box:before {
+    content: "";
+    display: block;
+    padding-top: 45%;
+}
+.carousel-inner .item .item-container {
+    background-color: #EFEFEF;
+    border: solid 1px #C9C9C9;
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.carousel-inner .item .text{
+    background-color: black;
+    color: white;
+    padding: 0px 10px 0px 20px;
+    position: absolute;
+    top: 8%;
+    left: 1px;
+    z-index: 1;
+}
+
+
+.flex-video {
+  position: relative;
+  padding-top: 25px;
+  padding-bottom: 67.5%;
+  height: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+ 
+.flex-video.widescreen { padding-bottom: 70%; }
+.flex-video.vimeo { padding-top: 0; }
+ 
+.flex-video iframe,
+.flex-video object,
+.flex-video embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+  /*.flex-video { padding-top: 0; }*/
+}

@@ -1,0 +1,76 @@
+<template name="home">
+	<div class="container">
+		<div class="row">
+			<div class="span10 offset1">
+				<!-- Carrousel acá -->
+				<div id="homeSlides" class="carousel slide">
+					<ol class="carousel-indicators">
+						{{# each homeSlides }}
+							<li data-target="#homeSlides" data-slide-to="{{ index }}" class="{{# if isCero index }}active{{/ if }}"></li>
+						{{/ each }}
+					</ol>
+					<!-- Carousel items -->
+					<div class="carousel-inner">
+						{{# each homeSlides }}
+							<div class="item {{# if isCero index }}active{{/ if }}">
+								<div class="box">
+									<p class="text">
+										{{# if linkBox }}
+											<a href="{{ linkBox }}" target="_BLANK">
+												{{ text }}
+												<i style="font-size: 14px; position: relative; top: -1px; color: #F5F5F5; left: 6px; margin-right: 7px; " class="fa fa-external-link"></i>
+											</a>
+										{{ else }}
+											<span>
+												{{ text }}
+											</span>
+										{{/ if }}
+									</p>
+									<a href="{{ link }}">
+										<span class="item-container" style="background-image:url('{{ image.url }}');"></span>
+									</a>
+								</div>
+							</div>
+						{{/ each }}
+					</div>
+					<!-- Carousel nav -->
+					<a class="carousel-control left" href="#homeSlides" data-slide="prev">&lsaquo;</a>
+					<a class="carousel-control right" href="#homeSlides" data-slide="next">&rsaquo;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid">  
+			<div class="span10 offset1">
+				<ul class="thumbnails portfolio-items">
+					{{# each banners }}
+						<li class="span3">
+							{{# if image }}
+								<div>
+									<a href="{{ link }}" class="box">
+										<div class="item-container" style="background-image:url('{{ image.url }}')">
+										</div>
+										<div class="portfolio-overlay">
+											<h4>{{ text }}</h4>
+										</div>
+									</a>
+								</div>
+							{{/ if }}
+							{{# if youtube }}
+							<div class="flex-video widescreen">
+								<youtube code="banner.youtube_code"></youtube>
+								<div style="height:250px;"><iframe style="overflow:hidden;height:100%;width:100%" width="100%" height="100%" src="http://www.youtube.com/embed/{{ youtube }}?controls=2" frameborder="0" allowfullscreen></iframe></div>
+							</div>
+							{{/ if }}
+							{{# if vimeo }}
+							<div class="flex-video widescreen">
+								<div style="height:250px;"><iframe style="overflow:hidden;height:100%;width:100%" width="100%" height="100%" src="http://player.vimeo.com/video/{{ vimeo }}" frameborder="0" allowfullscreen></iframe></div>
+							</div>
+							{{/ if }}
+						</li>
+					{{/ each }}
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>
+

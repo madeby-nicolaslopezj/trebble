@@ -1,0 +1,44 @@
+<template name="index">
+	<div class="pages white paralax page-welcome" id="page-welcome" style="background: #000 url({{ getIndexImage }}) 50% 0 repeat fixed;">
+	    <!-- Centralized content -->
+	    <div class="overlay"></div>
+	    <div class="centralized">
+	        <div class="container">
+	            <div class="row-fluid">
+	                <div class="span12 center">
+	                    <!-- Animated logo -->
+	                    <div class="logo">
+	                        <div class="scrollNormal">
+	                            <a href="{{ pathFor 'home' }}">
+	                                <img src="{{ dict 'indexImageLogo.url' 'http://trucko.cl/uploads/images/53f52227d7d5b.png' }}" width="115" height="115">
+	                            </a>
+	                        </div>
+	                        <div class="scrollDown">
+	                            <a href="{{ pathFor 'home' }}">
+	                                <img src="{{ dict 'indexImageEnter.url' 'http://trucko.cl/uploads/images/53f52adb68214.png' }}" width="115" height="115">
+	                            </a>
+	                        </div>
+	                    </div>
+
+	                    <div class="line-divider {{# if titlesIsArray }}welcome-messages{{/ if }}" id="welcome-messages">
+	                        <ul class="slides">
+	                        	{{# each dict 'indexTitles' }}
+		                            <li>
+		                                <h1>{{ this }}</h1>
+		                            </li>
+	                            {{/ each }}
+	                        </ul>
+	                    </div>
+	                    <p>{{ dict 'indexSubtitle' }}</p>
+	                    <div class="social-icons sicon-white bordered">
+	                        <a target="_BLANK" href="{{ dict 'facebook' }}" class="sicon-facebook"><i class="fa fa-facebook"></i></a>
+	                        <a target="_BLANK" href="{{ dict 'twitter' }}" class="sicon-twitter"><i class="fa fa-twitter"></i></a>
+	                        <a target="_BLANK" href="{{ dict 'youtube' }}" class="sicon-youtube"><i class="fa fa-youtube"></i></a>
+	                        <a target="_BLANK" href="{{ dict 'instagram' }}" class="sicon-instagram"><i class="fa fa-instagram"></i></a>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</template>
