@@ -5,8 +5,10 @@
 # but you can also edit it by hand.
 
 meteor-platform
+spiderable
 less
 reactive-var
+manuelschoebel:ms-seo@0.4.1
 orionjs:core
 orionjs:bootstrap
 orionjs:filesystem
