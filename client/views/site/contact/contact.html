@@ -20,25 +20,20 @@
             <article>
                 <div class="row-fluid">
                     <!-- Contact form -->
-                    <div class="span4 offset1">
+                    <div class="span5 offset1">
                         <h5>Escríbenos</h5>
-                        <!--
-                        <form ng-show="!contact_success">
-                            <input type="text" ng-model="contact.title" class="span12" placeholder="Title">
-                            <div class="alert alert-error" ng-show="contact_errors.title">{{ contact_errors.title[0] }}</div>
-                            <input type="email" ng-model="contact.email" class="span12" placeholder="Email">
-                            <div class="alert alert-error" ng-show="contact_errors.email">{{ contact_errors.email[0] }}</div>
-                            <textarea rows="10" ng-model="contact.message" class="span12"></textarea>
-                            <div class="alert alert-error" ng-show="contact_errors.message">{{ contact_errors.message[0] }}</div>
-                            <a style="background: black;" ng-disabled="contact_loading" type="submit" ng-click="sendContact()" class="btn btn-primary">
-                                <span ng-show="!contact_loading">Enviar</span>
-                                <span ng-show="contact_loading">Enviando...</span>
-                            </a>
-                        </form>
-                        -->
-                        <div class="" ng-show="contact_success">
-                        <p>{{ dict 'contactSentMessage' }}</p>
-                        </div>
+                        {{# unless contactSent }}
+                            {{# autoForm schema='ContactSchema' id="contactForm" type="method" meteormethod="sendContact" }}
+                                {{> afQuickField name="title" placeholder="Titulo" class="span12" label=false }}
+                                {{> afQuickField name="email"  placeholder="Email" class="span12" label=false }}
+                                {{> afQuickField name="message"  placeholder="Mensaje" rows=10 class="span12" label=false }}
+                                <button style="background: black;" type="submit" class="btn btn-primary">Enviar</button>
+                            {{/ autoForm }}
+                        {{ else }}
+                            <div>
+                                <p>{{ dict 'contactSentMessage' }}</p>
+                            </div>
+                        {{/ unless }}
                     </div>
                     <!-- End Contact form -->
                     <!-- Contact information -->

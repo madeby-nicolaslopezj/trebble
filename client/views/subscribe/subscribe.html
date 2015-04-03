@@ -1,33 +1,30 @@
 <template name="subscribe">
-    <!--<div class="pages white newsletter-subscribe" style="background-color: {{ getDict('newsletter_color', '#000000') }};padding-top: 12px;">
+    <div class="pages white" id="newsletter-subscribe" style="background-color: #000; padding-top: 12px;">
         <div class="container">
             <div class="row-fluid">
                 <div class="span8 offset2">
-                    <form ng-show="!newsletter_success">
-                        <div class="span3" style="padding-top: 0px; font-size: 16px;">
-                            <p class="text-center">Subscríbete a nuestro newsletter</p>
+                    {{# unless newsletterSent }}
+                        {{# autoForm schema='ContactSchema' id="subscribeForm" type="method" meteormethod="sendNewsletter" }}
+                            <div class="span3" style="padding-top: 0px; font-size: 16px;">
+                                <p class="text-center">Subscríbete a nuestro newsletter</p>
+                            </div>
+                            <div class="span3" style="margin-top: 10px;">
+                                {{> afQuickField name="email"  placeholder="Email" class="span12" label=false }}
+                            </div>
+                            <div class="span3" style="margin-top: 10px;">
+                                {{> afQuickField name="message" placeholder="Que banda quieres ver?" class="span12" label=false }}
+                            </div>
+                            <div class="span3" style="margin-top: 10px;">
+                                <button style="background: #000;" type="submit" class="btn btn-primary btn-block">Enviar</button>
+                            </div>  
+                        {{/ autoForm }}
+                    {{ else }}
+                        <div class="text-center">
+                            <p><i class="fa fa-check"></i></p>
                         </div>
-                        <div class="span3" style="margin-top: 10px;">
-                            <input type="email" ng-model="newsletter.email" class="span12" placeholder="Email">
-                            <div class="alert alert-error" ng-show="newsletter_errors.email">{{ newsletter_errors.email[0] }}</div>
-                        </div>
-                        <div class="span3" style="margin-top: 10px;">
-                            <input type="text" ng-model="newsletter.message" class="span12" placeholder="Que banda quieres ver?">
-                            <div class="alert alert-error" ng-show="newsletter_errors.message">{{ newsletter_errors.message[0] }}</div>
-                        </div>
-                        <div class="span3" style="margin-top: 10px;">
-                            <a ng-disabled="newsletter_loading" type="submit" ng-click="sendNewsletter()" class="btn btn-primary btn-block" style="background: {{ getDict('newsletter_button_color', '#000000') }};">
-                                <span ng-show="!newsletter_loading">ENVIAR</span>
-                                <span ng-show="newsletter_loading">ENVIANDO...</span>
-                            </a>
-                        </div>    
-                    </form>
-                    <div class="text-center" ng-show="newsletter_success">
-                        <p><i class="fa fa-check"></i></p>
-                    </div>
+                    {{/ unless }}
                 </div>
             </div>
         </div>
     </div>
-    -->
 </template>
