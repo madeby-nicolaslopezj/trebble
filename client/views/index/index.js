@@ -1,6 +1,8 @@
 Template.index.helpers({
     getIndexImage: function () {
-        return 'http://trucko.cl/uploads/images/54f78a1a2ebe6.png'
+        var images = orion.dictionary.get('indexImages');
+        var image = images[Math.floor(Math.random()*images.length)];
+        return image.item.url;
     },
     titlesIsArray: function() {
         return orion.dictionary.get('indexTitles').length > 1;

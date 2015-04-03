@@ -5,16 +5,9 @@ orion.dictionary.addDefinition('indexImageLogo', 'index',
     })
 );
 
-orion.dictionary.addDefinition('indexImageLogo', 'index', 
-    orion.attribute('file', {
-        label: 'Site Logo',
-        optional: true
-    })
-);
-
 orion.dictionary.addDefinition('indexImages', 'index', 
     orion.arrayOfAttribute('file', {
-        label: 'Site Logo',
+        label: 'Index Background Images',
         optional: true
     })
 );
