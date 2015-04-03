@@ -1,9 +1,11 @@
 Template.newsIndex.onRendered(function() {
 	this.subscribe('entity', 'news');
 	this.autorun(function() {
-		$('.masonry').masonry({
-			itemSelector: '.mansonry-item'
-		});
+		if ($(window).width() > 767) {
+            $('.masonry').masonry({
+                itemSelector: '.mansonry-item'
+            });
+        }
 	})
 })
 

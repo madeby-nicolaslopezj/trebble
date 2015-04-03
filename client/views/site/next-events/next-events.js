@@ -1,9 +1,6 @@
 Template.nextEventsIndex.onRendered(function() {
 	this.subscribe('entity', 'nextEvents');
 	this.autorun(function() {
-		$('.masonry').masonry({
-			itemSelector: '.mansonry-item'
-		});
 		$('html, body').animate({ scrollTop: 0 });
 	})
 })

@@ -1,3 +1,22 @@
+/**
+ * Set default colors
+
+var id = orion.dictionary.collection.findOne()._id;
+orion.dictionary.collection.update(id, {$set: {
+    colorsBackground: '#ffffff',
+    colorsTexts: '#292929',
+    colorsTextsSecondary: '#bbbbbb',
+    colorsNextEventsBackground: '#f5f5f5',
+    colorsNextEventsTexts: '#292929',
+    colorsHeaderBackground: '#ffffff',
+    colorsHeaderText: '#292929',
+    colorsSubscribeBackground: '#000000',
+    colorsSubscribeText: '#cacaca',
+    colorsSubscribeButton: '#262626',
+    colorsTitles: '#292929'
+}})
+ */
+
 orion.dictionary.addDefinition('colorsTitles', 'colors', {
     type: String,
     label: 'Titles Color',
