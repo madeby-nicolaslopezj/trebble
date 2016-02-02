@@ -1,6 +1,8 @@
 <template name="contact">
     <!-- PAGE | CONTACT -->
-    <div class="pages black-bg white page-contact" id="contacto">
+    <div class="pages black-bg white page-contact" id="contacto" style=" background-image: url({{ dict 'contactImage.url' }});
+  background-position: center;
+  background-size: cover;">
         <div class="container">
         <br><br>
             <!-- Header -->
@@ -39,14 +41,6 @@
                     <!-- Contact information -->
                     <div class="span4 offset1">
                         <h5>Conócenos</h5>
-                        <div class="media">
-                            <div class="pull-left">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="media-body smallFontBy08" style="padding-top: 1px;">
-                                {{ dict 'contactPhone' }}
-                            </div>
-                        </div>
                         <div class="media">
                             <div class="pull-left">
                                 <i class="fa fa-map-marker"></i>

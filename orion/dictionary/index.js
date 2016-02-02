@@ -1,23 +1,30 @@
-orion.dictionary.addDefinition('indexImageLogo', 'index', 
+orion.dictionary.addDefinition('indexImageLogo', 'index',
     orion.attribute('file', {
-        label: 'Site Logo',
-        optional: true
+      label: 'Site Logo',
+      optional: true,
     })
 );
 
-orion.dictionary.addDefinition('indexImages', 'index', 
+orion.dictionary.addDefinition('indexImageEnter', 'index',
+    orion.attribute('file', {
+      label: 'Imagen Entrar',
+      optional: true,
+    })
+);
+
+orion.dictionary.addDefinition('indexImages', 'index',
     orion.arrayOfAttribute('file', {
-        label: 'Index Background Images',
-        optional: true
+      label: 'Index Background Images',
+      optional: true,
     })
 );
 
 orion.dictionary.addDefinition('indexTitles', 'index', {
-	type: [String],
-	label: 'Titles'
+  type: [String],
+  label: 'Titles',
 });
 
 orion.dictionary.addDefinition('indexSubtitle', 'index', {
-	type: String,
-	label: 'Subtitle'
+  type: String,
+  label: 'Subtitle',
 });
